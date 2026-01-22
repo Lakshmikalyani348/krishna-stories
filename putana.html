@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Krishna Kills Putana</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .lang-selector {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .lang-selector label {
+      font-weight: bold;
+      margin-right: 10px;
+      color: #ffcc00;
+    }
+
+    .story-container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .story-title {
+      font-size: 2.5em;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    .story-image {
+      width: 60%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+      margin-bottom: 20px;
+    }
+
+    .story-content {
+      font-size: 1.5em;
+      color: #f0f0f0;
+      text-align: justify;
+      padding: 0 10%;
+      line-height: 1.5;
+    }
+
+    select {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+      background: #222;
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-selector">
+    <label for="language">Select Language:</label>
+    <select id="language" onchange="loadStory()">
+      <option value="en">English</option>
+      <option value="te">Telugu</option>
+      <option value="hi">Hindi</option>
+    </select>
+  </div>
+
+  <div class="story-container">
+    <h1 class="story-title" id="story-title">Krishna Kills Putana</h1>
+    <img
+      id="story-image"
+      class="story-image"
+      src="https://cdn2.momjunction.com/wp-content/uploads/2014/05/Krishna-kills-Putana.jpg.avif"
+      alt="Krishna Kills Putana"
+    />
+    <div class="story-content" id="story-content"></div>
+  </div>
+
+  <script>
+    const stories = {
+      en: {
+        title: "Krishna Kills Putana",
+        content: `
+<b>Step 1: Introduction to the danger</b><br>
+Kansa, the wicked king of Mathura, had imprisoned his sister Devaki and her husband Vasudeva after hearing a prophecy that her eighth child would kill him. After Krishna was born, Vasudeva secretly carried the divine infant across the Yamuna river to Gokul, where he was raised by Yashoda and Nanda.<br><br>
+
+<b>Step 2: Kansa sends demons</b><br>
+As Krishna grew in Gokul, Kansa began sending his demons one by one to kill the child. Each time, Krishna miraculously defeated them. Kansa then sent one of his most powerful and cunning demons — Putana, the Queen of Demons.<br><br>
+
+<b>Step 3: Putana’s disguise and plan</b><br>
+Putana was known for her terrifying powers and magic. She disguised herself as a beautiful and gentle woman and entered the peaceful village of Gokul. Using her charm, she went from house to house pretending to bless newborns and secretly feeding them poisoned milk.<br><br>
+
+<b>Step 4: She reaches Krishna</b><br>
+Finally, she reached the house of Nanda and Yashoda, where little Krishna was sleeping peacefully. With a wicked smile, she picked him up in her arms and began to breastfeed him with her poisoned milk, hoping he would die instantly.<br><br>
+
+<b>Step 5: Krishna’s divine power</b><br>
+But Krishna, the divine incarnation of Vishnu, saw through her illusion. Instead of dying, he calmly sucked not only the milk but also Putana’s life force. She screamed in agony as her real demonic form appeared — huge, terrifying, and dark.<br><br>
+
+<b>Step 6: Putana is destroyed</b><br>
+With one final cry, Putana fell lifeless to the ground. The villagers rushed to the scene in fear, only to find baby Krishna happily playing on her chest, completely unharmed.<br><br>
+
+<b>Step 7: Village’s realization</b><br>
+The people of Gokul were shocked but relieved. They realized Krishna was no ordinary child. Yashoda embraced her son tightly, still unaware of his divinity but grateful for his safety.<br><br>
+
+<b>Step 8: Conclusion and moral</b><br>
+Thus, even as a child, Krishna protected his people from evil. The slaying of Putana became one of the first miracles in Krishna’s childhood, reminding everyone that divine power always defeats darkness, no matter how powerful the enemy may seem.
+        `
+      },
+      te: {
+        title: "పుతన వధ",
+        content: `
+<b>Step 1: ప్రమాద పరిచయం</b><br>
+కంసుడు దేవకిని మరియు వసుదేవుడిని బంధించి, ఎనిమిదవ బిడ్డ తన మరణానికి కారణమవుతాడని వినిపించి, కృష్ణుని గోకులానికి పంపిస్తాడు.<br><br>
+
+<b>Step 2: రాక్షసులను పంపటం</b><br>
+కృష్ణుడు పెరుగుతున్నకొద్దీ, కంసుడు ఒక్కొక్క రాక్షసుడిని పంపిస్తాడు. చివరకు పుతన అనే శక్తిమంతురాలిని పంపిస్తాడు.<br><br>
+
+<b>Step 3: పుతన వేషం</b><br>
+పుతన అందమైన స్త్రీగా వేషధరిచి విషపూరిత పాలను ఇవ్వాలని పథకం వేసి గోకులానికి చేరుతుంది.<br><br>
+
+<b>Step 4: కృష్ణుని వద్దకు చేరుతుంది</b><br>
+ఆమె యశోద ఇంటికి చేరి, నిద్రపోతున్న కృష్ణునికి విషపూరిత పాలిచ్చే ప్రయత్నం చేస్తుంది.<br><br>
+
+<b>Step 5: కృష్ణుని దివ్యశక్తి</b><br>
+కృష్ణుడు విషంతో పాటు ఆమె ప్రాణాలనూ పీల్చి, ఆమెను చంపేస్తాడు.<br><br>
+
+<b>Step 6: పుతన మరణం</b><br>
+ఆమె రాక్షస రూపంలో విలీనమై, కృష్ణుడు ఆమె మీద ఆడుకుంటాడు.<br><br>
+
+<b>Step 7: గ్రామస్తుల ఆశ్చర్యం</b><br>
+గ్రామస్తులు ఆశ్చర్యపోతారు, కానీ కృష్ణుడు సురక్షితంగా ఉన్నాడు.<br><br>
+
+<b>Step 8: ముగింపు & నైతికత</b><br>
+పుతన వధ ద్వారా, చిన్న వయసులోనే కృష్ణుడు దుర్మార్గాన్ని ధ్వంసిస్తాడు.
+        `
+      },
+      hi: {
+        title: "पुतना वध",
+        content: `
+<b>Step 1: खतरे की शुरुआत</b><br>
+कंस ने भविष्यवाणी सुनकर देवकी और वासुदेव को बंदी बना लिया। कृष्ण जन्म के बाद वासुदेव उन्हें गोकुल ले गए।<br><br>
+
+<b>Step 2: राक्षसों को भेजना</b><br>
+कंस ने कृष्ण को मारने के लिए कई राक्षस भेजे। अंत में उसने पुतना को भेजा।<br><br>
+
+<b>Step 3: पुतना का वेश</b><br>
+पुतना सुंदर स्त्री के रूप में गोकुल आई और विषपान कराने की योजना बनाई।<br><br>
+
+<b>Step 4: कृष्ण के पास पहुँचना</b><br>
+वह यशोदा के घर पहुँची और विषमिश्रित दूध पिलाने लगी।<br><br>
+
+<b>Step 5: कृष्ण की दिव्यता</b><br>
+कृष्ण ने उसके विष के साथ उसकी प्राण शक्ति भी खींच ली।<br><br>
+
+<b>Step 6: पुतना का अंत</b><br>
+पुतना गिर पड़ी और कृष्ण खेलते हुए दिखाई दिए।<br><br>
+
+<b>Step 7: गाँव की प्रतिक्रिया</b><br>
+गाँव वाले चकित थे लेकिन राहत महसूस की।<br><br>
+
+<b>Step 8: निष्कर्ष और शिक्षा</b><br>
+इस घटना ने सिद्ध किया कि ईश्वर हमेशा अंधकार को हराता है।
+        `
+      }
+    };
+
+    function loadStory() {
+      const lang = document.getElementById('language').value;
+      const story = stories[lang];
+      document.getElementById('story-title').innerText = story.title;
+      document.getElementById('story-content').innerHTML = story.content;
+    }
+
+    window.onload = loadStory;
+  </script>
+
+</body>
+</html>

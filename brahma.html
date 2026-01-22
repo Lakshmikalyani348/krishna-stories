@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Krishna’s Lesson to Lord Brahma</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .lang-selector {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .lang-selector label {
+      font-weight: bold;
+      margin-right: 10px;
+      color: #ffcc00;
+    }
+
+    .story-container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .story-title {
+      font-size: 2.4em;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    .story-image {
+      width: 60%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+      margin-bottom: 20px;
+    }
+
+    .story-content {
+      font-size: 1.3em;
+      text-align: justify;
+      padding: 0 10%;
+      line-height: 1.6;
+    }
+
+    select {
+      padding: 6px 10px;
+      border-radius: 5px;
+      border: none;
+      background: #222;
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-selector">
+    <label for="language">Select Language:</label>
+    <select id="language" onchange="loadStory()">
+      <option value="en">English</option>
+      <option value="te">Telugu</option>
+      <option value="hi">Hindi</option>
+    </select>
+  </div>
+
+  <div class="story-container">
+    <h1 class="story-title" id="story-title">Krishna’s Lesson to Lord Brahma</h1>
+    <img
+      id="story-image"
+      class="story-image"
+      src="https://cdn2.momjunction.com/wp-content/uploads/2014/05/Krishnas-lesson-to-Lord-Brahma-.jpg.avif"
+      alt="Krishna’s Lesson to Lord Brahma"
+    />
+    <div class="story-content" id="story-content">
+      <!-- Content will be loaded here -->
+    </div>
+  </div>
+
+  <script>
+    const stories = {
+      en: {
+        title: "Krishna’s Lesson to Lord Brahma",
+        content: `One day, Lord Brahma decides to test Lord Krishna if he really is the Parabrahma (universal lord) or not. In order to test Krishna, Lord Brahma kidnaps every child and calf of Vrindavan and hides all of them in his world.
+        Krishna understands that this is the handiwork of Brahma and decides to teach him a lesson.
+Krishna multiplies himself into all the missing children and calves. He and all his forms return to the village. People do not find any difference, and life goes on as usual. In fact, they feel happy as they begin to receive increased love and affection from their ‘children’.
+Lord Brahma realizes his mistake and releases all the children with their cattle and calves.`
+      },
+      te: {
+        title: "బ్రహ్మ దేవుడికి కృష్ణుని పాఠం",
+        content: `ఒకరోజు బ్రహ్మ దేవుడు కృష్ణుడు నిజంగా పరబ్రహ్మనా కాదా అని పరీక్షించాలని అనుకుంటాడు. ఈ పరీక్ష కోసం వృందావనంలో ఉన్న పిల్లల్ని మరియు దూడల్ని కిడ్నాప్ చేసి తన లోకంలో దాచేస్తాడు.
+కృష్ణుడు ఇది బ్రహ్మ చేసిన పని అని వెంటనే అర్థం చేసుకుంటాడు. అతనికి ఒక పాఠం నేర్పించాలని నిర్ణయించుకుంటాడు.
+కృష్ణుడు తనను అనేకరూపాలుగా మార్చుకుని, మాయమైన పిల్లలు మరియు దూడలుగా మారతాడు. అతను మరియు అతని అన్ని రూపాలు గ్రామానికి తిరిగి వస్తాయి. గ్రామస్తులకు ఎలాంటి తేడా కనిపించదు. వారు ఇంతకు మించి ప్రేమను మరియు అనురాగాన్ని పొందుతూ సంతోషంగా జీవిస్తారు.
+అప్పుడు బ్రహ్మ తన తప్పును గ్రహించి పిల్లలతో పాటు దూడల్ని కూడా విడిచిపెడతాడు.`
+      },
+      hi: {
+        title: "भगवान ब्रह्मा को कृष्ण का पाठ",
+        content: `एक दिन भगवान ब्रह्मा यह देखने के लिए कि क्या कृष्ण वास्तव में परब्रह्म हैं या नहीं, उन्हें परखने का निर्णय लेते हैं। वे वृंदावन के सभी बच्चों और बछड़ों को चुराकर अपने लोक में छिपा देते हैं।
+कृष्ण को यह समझ में आता है कि यह ब्रह्मा की चाल है, और वे उन्हें एक सबक सिखाने का निर्णय लेते हैं।
+कृष्ण सभी गायब बच्चों और बछड़ों के रूप में स्वयं को गुणा कर लेते हैं। वह और उनके सभी रूप गाँव लौट आते हैं। किसी को भी कोई अंतर नहीं दिखता और जीवन सामान्य रूप से चलता रहता है। वास्तव में, लोग पहले से अधिक प्रेम और स्नेह अनुभव करते हैं।
+ब्रह्मा अपनी गलती समझते हैं और सभी बच्चों और बछड़ों को वापस छोड़ देते हैं।`
+      }
+    };
+
+    function loadStory() {
+      const lang = document.getElementById('language').value;
+      const story = stories[lang];
+      document.getElementById('story-title').innerText = story.title;
+      document.getElementById('story-content').innerHTML = story.content.replace(/\n/g, "<br><br>");
+    }
+
+    window.onload = loadStory;
+  </script>
+
+</body>
+</html>

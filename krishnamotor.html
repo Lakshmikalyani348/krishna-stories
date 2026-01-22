@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Krishna Drags the Mortar</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .lang-selector {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .lang-selector label {
+      font-weight: bold;
+      margin-right: 10px;
+      color: #ffcc00;
+    }
+
+    .story-container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .story-title {
+      font-size: 2.2em;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    .story-image {
+      width: 60%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+      margin-bottom: 20px;
+    }
+
+    .story-content {
+      font-size: 1.2em;
+      text-align: justify;
+      padding: 0 10%;
+      line-height: 1.6;
+    }
+
+    select {
+      padding: 6px 10px;
+      border-radius: 5px;
+      border: none;
+      background: #333;
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="lang-selector">
+    <label for="language">Select Language:</label>
+    <select id="language" onchange="loadStory()">
+      <option value="en">English</option>
+      <option value="te">Telugu</option>
+      <option value="hi">Hindi</option>
+    </select>
+  </div>
+
+  <div class="story-container">
+    <h1 class="story-title" id="story-title">Krishna Drags the Mortar</h1>
+    <img id="story-image" class="story-image" src="https://www.radhakrishnaimageshd.com/wp-content/uploads/2022/09/Yashoda-Krishna-Images-16.png" alt="Krishna drags the mortar" />
+    <div class="story-content" id="story-content">
+      <!-- Dynamic content loads here -->
+    </div>
+  </div>
+
+  <script>
+    const stories = {
+      en: {
+        title: "Krishna Drags the Mortar",
+        content: `One day, Yashoda catches toddler Krishna red handed while stealing butter. She gets a long rope to tie him to a tree, but swift Krishna runs away from her. Yashoda chases him for a long time but eventually gives up. On seeing his exhausted mother, Krishna goes up to his mother and asks her to tie him up.
+As the rope seems too small, Yashoda ties Krishna to heavy mortar. Sometime later, there is a loud noise and people gather to check what it is. They see that little Krishna drags the enormously heavy mortar and pulls down the two trees standing nearby.
+The trees are the cursed sons of Kubera, the God of Wealth. As Krishna pulls down the trees, they get liberated from the curse.`
+      },
+      te: {
+        title: "కృష్ణుడు ఉలూములి లాగినాడు",
+        content: `ఒకరోజు కృష్ణుడు వెన్న దొంగలిస్తున్నప్పుడు యశోద అతన్ని అట్టిపడుతుంది. అతన్ని చెట్టుకు కట్టేందుకు ఆమె ఓ పొడవైన తాడు తేస్తుంది కానీ చురుకైన కృష్ణుడు పారిపోతాడు. యశోద ఎంతో పాటు వెంబడించిన తరువాత అలసిపోతుంది.
+తల్లి అలసిపోయినట్టు చూసిన కృష్ణుడు తన అమ్మవద్దకు వచ్చి "నన్ను కట్టి పెట్టు" అంటాడు. తాడు సరిపోకపోవడంతో యశోద కృష్ణుడిని ఓ బరువైన ఉలూములికి కట్టేస్తుంది.
+కొద్ది సేపటికి ఓ పెద్ద శబ్దం వస్తుంది. అందరూ వచ్చి చూస్తే, కృష్ణుడు ఆ బరువైన ఉలూములిని లాగుతూ రెండు చెట్లను కూలగొట్టాడు. ఆ చెట్లు కుబేరుడి శాపగ్రస్త కుమారులు. కృష్ణుడు వాటిని కూలగొట్టిన తరువాత వారు శాపనివృతులవుతారు.`
+      },
+      hi: {
+        title: "कृष्ण ने ओखली को घसीटा",
+        content: `एक दिन, यशोदा ने छोटे कृष्ण को मक्खन चुराते हुए पकड़ लिया। वह एक लंबी रस्सी लेकर उसे पेड़ से बाँधने चली लेकिन चंचल कृष्ण भाग गया। यशोदा ने बहुत देर तक पीछा किया और थक गई।
+जब कृष्ण ने अपनी माँ को थका हुआ देखा, तो वह खुद ही उसके पास आया और उसे बाँधने को कहा। रस्सी छोटी पड़ने पर यशोदा ने कृष्ण को एक भारी ओखली से बाँध दिया।
+कुछ समय बाद, एक जोरदार आवाज़ सुनाई दी। लोग देखने आए कि क्या हुआ। उन्होंने देखा कि छोटा कृष्ण उस भारी ओखली को घसीटते हुए दो पेड़ों को गिरा दिया।
+वे पेड़ धन के देवता कुबेर के शापित पुत्र थे। कृष्ण के इस कार्य से वे शापमुक्त हो गए।`
+      }
+    };
+
+    function loadStory() {
+      const lang = document.getElementById('language').value;
+      const story = stories[lang];
+      document.getElementById('story-title').innerText = story.title;
+      document.getElementById('story-content').innerHTML = story.content.replace(/\n/g, '<br><br>');
+    }
+
+    window.onload = loadStory;
+  </script>
+</body>
+</html>

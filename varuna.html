@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Krishna and Varuna</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .lang-selector {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .lang-selector label {
+      font-weight: bold;
+      margin-right: 10px;
+      color: #ffcc00;
+    }
+
+    .story-container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .story-title {
+      font-size: 2.4em;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    .story-image {
+      width: 60%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+      margin-bottom: 20px;
+    }
+
+    .story-content {
+      font-size: 1.3em;
+      text-align: justify;
+      padding: 0 10%;
+      line-height: 1.5;
+    }
+
+    select {
+      padding: 6px 10px;
+      border-radius: 5px;
+      border: none;
+      background: #222;
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-selector">
+    <label for="language">Select Language:</label>
+    <select id="language" onchange="loadStory()">
+      <option value="en">English</option>
+      <option value="te">Telugu</option>
+      <option value="hi">Hindi</option>
+    </select>
+  </div>
+
+  <div class="story-container">
+    <h1 class="story-title" id="story-title">Krishna and Varuna</h1>
+    <img
+      id="story-image"
+      class="story-image"
+      src="https://cdn2.momjunction.com/wp-content/uploads/2014/05/Krishna-and-Varuna-.jpg.avif"
+      alt="Krishna and Varuna"
+    />
+    <div class="story-content" id="story-content">
+      <!-- Content loads here -->
+    </div>
+  </div>
+
+  <script>
+    const stories = {
+      en: {
+        title: "Krishna and Varuna",
+        content: `Krishna’s father Nanda was fasting on one ekadasi (the 11th lunar day). He went to take a dip in the holy river Yamuna just before sunrise. The servants of the demigod Varuna captured him, accusing him of bathing at a demonic time.
+Krishna and his brother Balarama searched for their father after his sudden disappearance. They heard sounds coming from the river and understood that Varuna had taken their father.
+Krishna visited Varuna and spoke to him. Varuna realized the mistake of his servants, apologized to Krishna, and released Nanda immediately.`
+      },
+      te: {
+        title: "కృష్ణుడు మరియు వరుణుడు",
+        content: `ఒక ఎకాదశి రోజున కృష్ణుడి తండ్రి నందుడు ఉపవాసం చేస్తున్నాడు. ఉదయం సూర్యోదయానికి ముందే యమునా నదిలో స్నానం చేయడానికి వెళ్ళాడు. అప్పుడు వరుణుడి సేవకులు నందుడిని దుర్ముహూర్త సమయంలో స్నానం చేశాడని భావించి, పట్టుకుని వరుణుని వద్దకు తీసుకెళ్ళారు.
+నందుడు అదృశ్యమైన తర్వాత, కృష్ణుడు మరియు బాలరాముడు అతనిని వెతికారు. వారు నది నుండి శబ్దాలు విని, నందుడిని వరుణుడు తీసుకెళ్ళినట్టు గ్రహించారు.
+కృష్ణుడు వరుణుని వద్దకు వెళ్లి మాటలాడాడు. వరుణుడు తన సేవకులు చేసిన తప్పును గుర్తించి కృష్ణుడిని క్షమాపణలు చెప్పి నందుడిని విడుదల చేశాడు.`
+      },
+      hi: {
+        title: "कृष्ण और वरुण",
+        content: `एकादशी के दिन कृष्ण के पिता नंद उपवास कर रहे थे। वे सूर्योदय से पहले यमुना नदी में स्नान करने गए। वरुण देव के सेवकों ने उन्हें पकड़ लिया, यह कहते हुए कि उन्होंने अशुभ समय में स्नान किया है।
+जब नंद अचानक गायब हो गए, तो कृष्ण और बलराम उनकी खोज में निकल पड़े। उन्हें नदी से कुछ आवाजें सुनाई दीं, और उन्होंने समझा कि वरुण देव ने उनके पिता को पकड़ लिया है।
+कृष्ण वरुण से मिलने गए और उनसे बातचीत की। वरुण को अपने सेवकों की गलती का एहसास हुआ, उसने कृष्ण से क्षमा मांगी और तुरंत नंद को रिहा कर दिया।`
+      }
+    };
+
+    function loadStory() {
+      const lang = document.getElementById('language').value;
+      const story = stories[lang];
+      document.getElementById('story-title').innerText = story.title;
+      document.getElementById('story-content').innerHTML = story.content.replace(/\n/g, "<br><br>");
+    }
+
+    window.onload = loadStory;
+  </script>
+
+</body>
+</html>
+

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Universe in Krishna’s Mouth</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .lang-selector {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .lang-selector label {
+      font-weight: bold;
+      margin-right: 10px;
+      color: #ffcc00;
+    }
+
+    .story-container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .story-title {
+      font-size: 2.4em;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    .story-image {
+      width: 60%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+      margin-bottom: 20px;
+    }
+
+    .story-content {
+      font-size: 1.3em;
+      text-align: justify;
+      padding: 0 10%;
+      line-height: 1.5;
+    }
+
+    select {
+      padding: 6px 10px;
+      border-radius: 5px;
+      border: none;
+      background: #222;
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-selector">
+    <label for="language">Select Language:</label>
+    <select id="language" onchange="loadStory()">
+      <option value="en">English</option>
+      <option value="te">Telugu</option>
+      <option value="hi">Hindi</option>
+    </select>
+  </div>
+
+  <div class="story-container">
+    <h1 class="story-title" id="story-title">The Whole Universe in Krishna’s Mouth</h1>
+    <img
+      id="story-image"
+      class="story-image"
+      src="https://cdn2.momjunction.com/wp-content/uploads/2014/05/The-whole-universe-in-Krishnas-mouth.jpg.avif"
+      alt="The Universe in Krishna’s Mouth"
+    />
+    <div class="story-content" id="story-content">
+      <!-- Content loads here -->
+    </div>
+  </div>
+
+  <script>
+    const stories = {
+      en: {
+        title: "The Whole Universe in Krishna’s Mouth",
+        content: `One day, Krishna and his brother Balarama went to a garden to pick fruits and berries. As Krishna was still a toddler, he could not reach the fruits. He stuffed his mouth with dust and sand from the ground.
+When the other children saw Krishna doing this, they went and complained to his mother.
+Yashoda came running to Krishna and sternly asked if he ate mud. Krishna denied having eaten mud and refused to open his mouth.
+But when Yashoda insisted, he opened his mouth, leaving Yashoda completely startled.
+Krishna gave a naughty grin as Yashoda did not see any mud, but the entire universe — the sun, stars, skies, oceans, hills, rivers, and mountains — all inside his tiny mouth.
+In that divine moment, she realized her son was no ordinary child, but an incarnation of the supreme Lord Vishnu himself.`
+      },
+      te: {
+        title: "కృష్ణుడు నోరులో సమస్త బ్రహ్మాండం",
+        content: `ఒకరోజు కృష్ణుడు మరియు అతని అన్నయ్య బాలరాముడు పండ్లు మరియు బెర్రీలు తీసుకునేందుకు తోటకు వెళ్ళారు. కృష్ణుడు చిన్నవాడిగా ఉండటంతో పండ్లను తాకలేకపోయాడు. అందుకే నేల నుండి మట్టి మరియు ధూళిని తీసుకొని నోట్లో పెట్టుకున్నాడు.
+ఇతర పిల్లలు ఇది చూసి యశోదకు ఫిర్యాదు చేశారు.
+యశోద పరుగెత్తుకుంటూ వచ్చి, “నీవు మట్టి తిన్నావా?” అని కృష్ణుడిని ప్రశ్నించింది. కృష్ణుడు తినలేదని చెప్పాడు మరియు నోరు తెరవడానికి నిరాకరించాడు.
+యశోద బలవంతంగా అడిగినపుడు, కృష్ణుడు తన నోరును తెరిచాడు. అప్పుడు యశోద ఆశ్చర్యానికి గురయ్యింది.
+తన కుమారుని నోరులో మట్టిని కాదు — సూర్యుడు, నక్షత్రాలు, ఆకాశం, సముద్రాలు, కొండలు, నదులు మరియు మొత్తం బ్రహ్మాండాన్ని చూసింది.
+ఆ పవిత్ర క్షణంలో, యశోదకు తెలుసు — ఆమె కుమారుడు సాధారణ బాలుడు కాదు, పరమేశ్వరుని అవతారము అని.`
+      },
+      hi: {
+        title: "कृष्ण के मुँह में सम्पूर्ण ब्रह्मांड",
+        content: `एक दिन कृष्ण और उनके भाई बलराम फल और जामुन तोड़ने के लिए बगीचे में गए। चूंकि कृष्ण अभी छोटे थे, वे फल नहीं तोड़ सके। उन्होंने ज़मीन से मिट्टी और धूल उठाकर अपने मुँह में भर ली।
+अन्य बच्चों ने यह देखा और तुरंत जाकर माँ यशोदा से शिकायत की।
+यशोदा दौड़ती हुई आईं और कड़े स्वर में पूछा, “क्या तुमने मिट्टी खाई?” कृष्ण ने इनकार किया और मुँह खोलने से मना कर दिया।
+लेकिन जब यशोदा ने ज़िद की, तब कृष्ण ने अपना मुँह खोला। यशोदा जो देखीं, उससे वे चौंक गईं।
+उन्हें कृष्ण के मुँह में कोई मिट्टी नहीं दिखाई दी — बल्कि पूरा ब्रह्मांड — सूर्य, तारे, आकाश, समुद्र, पहाड़, नदियाँ — सबकुछ वहाँ था।
+उस दिव्य क्षण में, यशोदा को एहसास हुआ कि उनका पुत्र एक सामान्य बालक नहीं, बल्कि स्वयं भगवान विष्णु का अवतार है।`
+      }
+    };
+
+    function loadStory() {
+      const lang = document.getElementById('language').value;
+      const story = stories[lang];
+      document.getElementById('story-title').innerText = story.title;
+      document.getElementById('story-content').innerHTML = story.content.replace(/\n/g, "<br><br>");
+    }
+
+    window.onload = loadStory;
+  </script>
+
+</body>
+</html>

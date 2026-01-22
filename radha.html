@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Radha &amp; Krishna – Divine Love</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+    .lang-selector {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+    .lang-selector label {
+      font-weight: bold;
+      margin-right: 10px;
+      color: #ffcc00;
+    }
+    select {
+      padding: 6px 10px;
+      border-radius: 5px;
+      border: none;
+      background: #222;
+      color: #fff;
+      font-weight: bold;
+    }
+    .story-container {
+      text-align: center;
+      padding: 20px;
+    }
+    .story-title {
+      font-size: 2.4em;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+    .story-image {
+      width: 60%;
+      max-width: 600px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(255,255,255,0.3);
+      margin-bottom: 20px;
+    }
+    .story-content {
+      font-size: 1.3em;
+      text-align: justify;
+      padding: 0 10%;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-selector">
+    <label for="language">Select Language:</label>
+    <select id="language" onchange="loadStory()">
+      <option value="en">English</option>
+      <option value="te">తెలుగు</option>
+      <option value="hi">हिन्दी</option>
+    </select>
+  </div>
+
+  <div class="story-container">
+    <h1 class="story-title" id="story-title">Radha &amp; Krishna – Divine Love</h1>
+    <img id="story-image" class="story-image"
+      src="https://wallpaperaccess.com/full/8993388.jpg"
+      alt="Radha and Krishna" />
+    <div class="story-content" id="story-content"></div>
+  </div>
+
+  <script>
+    const stories = {
+      en: {
+        title: "Radha & Krishna – Divine Love",
+        content: `Radha and Krishna are the ultimate embodiment of divine, spiritual love in Hindu tradition. From their first meetings as children in Vrindavan, their hearts were inseparable — she, the devoted lover; he, the flute-playing divine cowherd.
+Their love is more than romance — it symbolizes **pure Bhakti**, where the soul (Radha) longs for union with the Supreme (Krishna), transcending societal norms. While Krishna married Rukmini, his eternal bond with Radha remained unmatched, reflecting unconditional devotion.
+Legends speak of secret spiritual weddings in places like Bhandirvan, and sacred dances (Ras Lila) at night around Nidhivan — believed to occur even today.
+Radha–Krishna’s eternal love inspires **art, poetry, music, dance, and devotion** across centuries, reminding seekers of the divine union and the soul’s longing for God.`
+      },
+      te: {
+        title: "రాధా మరియు కృష్ణ – దివ్య ప్రేమ",
+        content: `రాధా మరియు కృష్ణ హృదయనుబంధం భారతీయ సంప్రదాయంలో దివ్య, ఆధ్యాత్మిక ప్రేమకు తీర్పాక్షరంగా నిలిచింది. వృందావనంలో వారి బాల్యభేటీ నుంచి మొదలైన ఆ కోరిక హృదయాలు ఎప్పటికీ విడిపోయాయి — రాధా అనురాగంతో కూడిన భక్తికి ప్రతీక, కృష్ణా బాసुरी వాయించేవాడు దేవం.
+వారి ప్రేమ సాదారణ రొమాంటిక్ గాథ కాదు — ఇది **నిష్కాపట భక్తి**కి ప్రతీక. రాధా ఆత్మగా, కృష్ణను పరమాత్మగా భావించి అధిక అనురాగంతో కలిసేది. రుక్మిణి పట్ల కూడా వారి ప్రేమ ప్రత్యేకంగా ఉండేది.
+బంధివనులో రహస్య ఆధ్యాత్మిక వివాహాలు, నిధివనులో రాత్రిపూట జరగనున్న రాస్ లీలా వంటి దివ్య సంగీతాలు వరకు – ఇవి ఇప్పటి కాలంలో కూడా జరుగుతున్నట్టు ఉండవచ్చు.
+రాధా–కృష్ణ ప్రేమ **కలలు, కళ, సాహిత్యం, సంగీతం, నృత్యం మరియు ఆధ్యాత్మికత**లో అపారమైన స్ఫూర్తిని ఇస్తుంది — ఇది భక్తజీవితానికి మార్గదర్శకంగా నిలుస్తుంది.`
+      },
+      hi: {
+        title: "राधा और कृष्ण – दिव्य प्रेम",
+        content: `राधा और कृष्ण को हिंदू धर्म में दिव्य, आध्यात्मिक प्रेम का प्रतिमान माना जाता है। वृंदावन में बचपन से उनका अटूट बंधन था — वह भक्ति की प्रतिमूर्ति, वह वंशीधर भगवान।
+उनका प्रेम सिर्फ रोमांस नहीं, बल्कि **निष्कपट भक्ति** का प्रतीक है। जैसे आत्मा (राधा) ईश्वर (कृष्ण) के प्रति अनन्य प्रेम करती है। कृष्ण ने रुक्मिणी से विवाह किया, पर राधा से उनका प्रेम कालातीत और अविच्छिन्न रहा।
+बंधिरवन में रात्रिकालीन रहस्यमयी विवाह और निधानवन में रासलीला की कथाएं आज भी जीवंत प्रतीत होती हैं।
+राधा–कृष्ण का अनंत प्रेम **कला, साहित्य, संगीत, नृत्य और भक्ति** में अमर है, जो भक्तों को आत्मा और परमात्मा की दिव्य आत्मीयता की याद दिलाता है।`
+      }
+    };
+
+    function loadStory() {
+      const lang = document.getElementById("language").value;
+      const s = stories[lang];
+      document.getElementById("story-title").innerText = s.title;
+      document.getElementById("story-content").innerHTML = s.content.replace(/\n/g, "<br><br>");
+    }
+
+    window.onload = loadStory;
+  </script>
+</body>
+</html>

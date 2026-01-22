@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Little Krishna Steals Butter</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .lang-selector {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .lang-selector label {
+      font-weight: bold;
+      margin-right: 10px;
+      color: #ffcc00;
+    }
+
+    .story-container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .story-title {
+      font-size: 2.4em;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    .story-image {
+      width: 60%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+      margin-bottom: 20px;
+    }
+
+    .story-content {
+      font-size: 1.4em;
+      text-align: justify;
+      padding: 0 10%;
+      line-height: 1.4;
+    }
+
+    select {
+      padding: 6px 10px;
+      border-radius: 5px;
+      border: none;
+      background: #222;
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-selector">
+    <label for="language">Select Language:</label>
+    <select id="language" onchange="loadStory()">
+      <option value="en">English</option>
+      <option value="te">Telugu</option>
+      <option value="hi">Hindi</option>
+    </select>
+  </div>
+
+  <div class="story-container">
+    <h1 class="story-title" id="story-title">Little Krishna Steals Butter</h1>
+    <img
+      id="story-image"
+      class="story-image"
+      src="https://cdn2.momjunction.com/wp-content/uploads/2014/05/Little-Krishna-steals-butter.jpg.avif"
+      alt="Little Krishna Steals Butter"
+    />
+    <div class="story-content" id="story-content">
+      <!-- Content loads here -->
+    </div>
+  </div>
+
+  <script>
+    const stories = {
+      en: {
+        title: "Little Krishna Steals Butter",
+        content: `Krishna was very fond of butter as a child. Even though his mother, Yashoda, used to feed him regularly, Krishna would sneak into kitchens and butter storage rooms to steal butter.
+Not just at his own home, but he would go to the houses of neighbors in Vrindavan and steal butter from there too.
+His mischievous acts of butter stealing became so famous that people in the entire village began calling him “Makhan Chor” (Butter Thief).
+The village women would often come to Yashoda to complain about Krishna's naughty deeds. They told her how Krishna would not only steal their butter but also share it with monkeys and his friends.
+To stop him, Yashoda started hanging the butter pitchers high up from the ceiling, thinking Krishna wouldn’t be able to reach them.
+But little did she know, Krishna was too clever and determined.
+One day, when Yashoda stepped out for an important task, Krishna decided to take the opportunity. He called his friends over and said, “Let’s get that butter today!”
+At first, his friends hesitated, afraid of getting caught. But Krishna convinced them with his sweet words and playful charm.
+They formed a human pyramid — Krishna climbed on their shoulders carefully and finally reached the butter pot hanging from the ceiling.
+He broke it open and enjoyed the butter joyfully, sharing it with everyone, even feeding some to the monkeys nearby.
+When Yashoda returned and caught Krishna red-handed with butter smeared all over his face, she couldn’t help but smile despite being angry.
+This story is one of the most cherished tales of Krishna’s childhood, symbolizing his playful, loving, and divine nature that brought joy to everyone around him.`
+      },
+      te: {
+        title: "చిన్న కృష్ణుడు వెన్నను దొంగిలించాడు",
+        content: `కృష్ణుడు చిన్నప్పటినుండి వెన్నకు చాలా ఇష్టపడేవాడు. యశోద అన్నపానాలు పెడుతుండగా కూడా, kitchensలోకి దూరి వెన్నను దొంగలించేవాడు.
+తన ఇంట్లోనే కాదు, వృద్ధావనంలోని పొరుగింట్ల నుండి కూడా వెన్నను దొంగలించేవాడు.
+ఈ వెన్న దొంగతనాలు అంత ప్రఖ్యాతి పొందాయి, గ్రామస్తులు ఆయనను “మక్కన్ చోర్” అని పిలవసాగారు.
+గ్రామంలోని స్త్రీలు తరచుగా యశోదకు ఫిర్యాదు చేస్తూ, “మీ కృష్ణుడు మా ఇంట్లో వెన్న తింటున్నాడు” అని చెబుతుండేవారు.
+వెన్నను దాచేందుకు యశోద గిన్నెలను పైకప్పుకు వేలాడదీసి పెట్టింది.
+కానీ కృష్ణుడు ఎంతో తెలివైనవాడు.
+ఒక రోజు యశోద ఇంట్లో లేకపోతే, కృష్ణుడు తన స్నేహితులను పిలిచి వెన్నను తీసుకుందాం అని చెప్పాడు.
+మొదట్లో వాళ్లు భయపడి తిరస్కరించగా, కృష్ణుడు తన చిరునవ్వుతో ఒప్పించేశాడు.
+అందరూ కలిసి మానవ పిరమిడ్ తయారుచేసి, కృష్ణుడు పైకి ఎక్కి గిన్నెను పగలగొట్టి వెన్నను తిన్నాడు.
+వెన్న ముఖానికి పూసుకుండి ఉండగా, యశోద వచ్చి చూసింది. కోపంగా ఉన్నా, కృష్ణుడి అమాయకమైన ముఖం చూసి నవ్వి వదిలేసింది.
+ఈ కథ కృష్ణుడి బాల్యంలో ఎంతో ప్రియమైన సంఘటనగా గుర్తింపు పొందింది.`
+      },
+      hi: {
+        title: "नन्हें कृष्ण ने मक्खन चुराया",
+        content: `कृष्ण बचपन में मक्खन के बहुत शौकीन थे। भले ही माँ यशोदा उन्हें समय पर खाना खिलाती थीं, फिर भी कृष्ण चुपके से रसोई में जाकर मक्खन चुरा लेते थे।
+वह केवल अपने घर में ही नहीं, बल्कि वृंदावन के अन्य घरों में भी मक्खन चुराने जाते थे।
+उनकी मक्खन चोरी की शरारतें इतनी प्रसिद्ध हो गईं कि पूरा गाँव उन्हें “माखन चोर” कहने लगा।
+गाँव की महिलाएँ अक्सर यशोदा से शिकायत करती थीं कि कृष्ण उनके घरों में घुसकर मक्खन चुराते हैं और उसे अपने दोस्तों और बंदरों के साथ बाँटते हैं।
+यशोदा ने मक्खन के बर्तन छत से ऊँचाई पर लटकाना शुरू किया, ताकि कृष्ण उसे न छू सकें।
+लेकिन कृष्ण बहुत चालाक और दृढ़ निश्चयी थे।
+एक दिन जब यशोदा बाहर गई थीं, कृष्ण ने अपने दोस्तों को बुलाया और कहा, “आज मक्खन जरूर लाना है!”
+शुरुआत में दोस्त डरे हुए थे, पर कृष्ण की मीठी बातों में आकर वे मान गए।
+उन्होंने एक मानव पिरामिड बनाया और कृष्ण धीरे-धीरे चढ़कर मक्खन के बर्तन तक पहुँच गए।
+कृष्ण ने बर्तन तोड़ा और खुशी-खुशी मक्खन खाया, अपने दोस्तों और बंदरों को भी खिलाया।
+जब यशोदा लौटीं और कृष्ण को मक्खन से सना हुआ देखा, वह गुस्से में थीं, पर उसके मासूम चेहरे को देखकर मुस्कुरा दीं।
+यह कहानी कृष्ण के बचपन की सबसे प्रिय कथाओं में से एक है, जो उनके चंचल, प्रेममयी और दिव्य स्वभाव को दर्शाती है।`
+      }
+    };
+
+    function loadStory() {
+      const lang = document.getElementById('language').value;
+      const story = stories[lang];
+      document.getElementById('story-title').innerText = story.title;
+      document.getElementById('story-content').innerHTML = story.content.replace(/\n/g, "<br><br>");
+    }
+
+    window.onload = loadStory;
+  </script>
+
+</body>
+</html>

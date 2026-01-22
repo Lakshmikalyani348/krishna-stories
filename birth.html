@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birth of Krishna</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #000000;
+      color: #ffffff;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .lang-selector {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .lang-selector label {
+      font-weight: bold;
+      margin-right: 10px;
+      color: #ffcc00;
+    }
+
+    .birth-container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .title-text {
+      font-size: 2.4em;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    .birth-image {
+      width: 60%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+      margin-bottom: 20px;
+    }
+
+    .birth-story {
+      font-size: 1.3em;
+      color: #f0f0f0;
+      text-align: justify;
+      padding: 0 10%;
+      line-height: 1.4;
+    }
+
+    select {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+      background: #222;
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-selector">
+    <label for="language">Select Language:</label>
+    <select id="language">
+      <option value="en">English</option>
+      <option value="te">Telugu</option>
+      <option value="hi">Hindi</option>
+    </select>
+  </div>
+
+  <div class="birth-container">
+    <h1 class="title-text" id="title">The Birth of Krishna</h1>
+    <img
+      id="story-image"
+      class="birth-image"
+      src="https://static.sadhguru.org/d/46272/1633189749-1633189748848.jpg"
+      alt="Krishna Birth"
+    />
+    <div class="birth-story" id="content">
+      As per the Hindu epic Mahabharata, Lord Krishna was born to King Vasudeva and his wife Devaki. Devaki’s brother Kansa was a cruel man who engaged in heinous activities.
+
+      During Devaki and Vasudeva’s wedding rituals, Kansa is warned by the astrologers that their child would kill him. Hearing this, Kansa imprisons the couple and kills every child that is born to them.
+
+      But when Krishna is born, Vasudeva secretly arranges for the infant to be carried away and replaces him with another baby (Krishna’s foster-mother Yashoda’s daughter).
+
+      When evil Kansa tries to kill this replaced baby, she turns into goddess Adi Parashakti and warns him that his death has arrived and nothing can change his fate.
+
+      Meanwhile, the newborn Krishna is carried to the other side of the river Yamuna, where he is rescued and fostered by Nanda and his wife Yashoda in Gokul. The birth of Lord Krishna is celebrated as Krishnashtami or Janmashtami.
+    </div>
+  </div>
+
+  <script>
+    const stories = {
+      en: {
+        title: "The Birth of Krishna",
+        content: `As per the Hindu epic Mahabharata, Lord Krishna was born to King Vasudeva and his wife Devaki. Devaki’s brother Kansa was a cruel man who engaged in heinous activities.
+During Devaki and Vasudeva’s wedding rituals, Kansa is warned by the astrologers that their child would kill him. Hearing this, Kansa imprisons the couple and kills every child that is born to them.
+But when Krishna is born, Vasudeva secretly arranges for the infant to be carried away and replaces him with another baby (Krishna’s foster-mother Yashoda’s daughter).
+When evil Kansa tries to kill this replaced baby, she turns into goddess Adi Parashakti and warns him that his death has arrived and nothing can change his fate.
+Meanwhile, the newborn Krishna is carried to the other side of the river Yamuna, where he is rescued and fostered by Nanda and his wife Yashoda in Gokul. The birth of Lord Krishna is celebrated as Krishnashtami or Janmashtami.`
+      },
+
+      te: {
+        title: "కృష్ణ జననం",
+        content: `హిందూ ఇతిహాసం మహాభారతం ప్రకారం, శ్రీకృష్ణుడు వసుదేవుడు మరియు దేవకికి జన్మించాడు. దేవకికి అన్నయ్య అయిన కంసుడు ఒక క్రూరమైన వ్యక్తి.
+దేవకి మరియు వసుదేవుల వివాహ సమయంలో, జ్యోతిష్కులు కంసుడిని హెచ్చరిస్తారు – ఈ దంపతులకు పుట్టే బిడ్డ అతన్ని చంపుతాడని.
+ఇది విన్న కంసుడు వారిని చెరలో వేసి, పుట్టిన ప్రతి శిశువును చంపుతాడు.
+కానీ కృష్ణుడు పుట్టినప్పుడు, వసుదేవుడు అతన్ని రహస్యంగా గోకులానికి తరలించి, యశోద కుమార్తెతో మార్పిడి చేస్తాడు.
+కంసుడు ఆ మార్పిడి చేసిన శిశువును చంపబోయే సమయానికి, ఆ శిశువు ఆది పరాశక్తిగా మారి – నీ మరణం చేరిపోయింది అని హెచ్చరిస్తుంది.
+ఇంతలో, నందుడు మరియు యశోద కుమారుడిగా కృష్ణుడు గోకులంలో పెరుగుతాడు. కృష్ణ జన్మదినం శ్రీకృష్ణాష్టమిగా జరుపుకుంటారు.`
+      },
+
+      hi: {
+        title: "कृष्ण का जन्म",
+        content: `हिंदू महाकाव्य महाभारत के अनुसार, भगवान कृष्ण का जन्म वासुदेव और देवकी से हुआ था। देवकी का भाई कंस एक क्रूर और पापी व्यक्ति था।
+देवकी और वासुदेव की शादी के समय, ज्योतिषियों ने कंस को चेतावनी दी कि इनका आठवां पुत्र उसे मारेगा।
+यह सुनकर कंस ने देवकी और वासुदेव को कारावास में डाल दिया और उनके हर बच्चे को मार डाला।
+जब कृष्ण जन्म लेते हैं, वासुदेव उन्हें गुप्त रूप से यशोदा के घर ले जाकर एक बच्ची से बदल देते हैं।
+कंस जब उस बच्ची को मारने जाता है, वह देवी आदि पराशक्ति में बदलकर उसे बताती है कि उसका अंत निश्चित है।
+इसके बाद नवजात कृष्ण यमुना नदी पार करके गोपालपुर पहुंचते हैं और वहाँ नंद और यशोदा के साथ बड़े होते हैं। कृष्ण का जन्मदिन जन्माष्टमी के रूप में मनाया जाता है।`
+      }
+    };
+
+    const langSelect = document.getElementById("language");
+    const title = document.getElementById("title");
+    const content = document.getElementById("content");
+
+    function updateStory(lang) {
+      title.innerText = stories[lang].title;
+      content.innerHTML = stories[lang].content.replace(/\n/g, "<br><br>");
+    }
+
+    // Load default language
+    updateStory("en");
+
+    langSelect.addEventListener("change", function () {
+      updateStory(langSelect.value);
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+

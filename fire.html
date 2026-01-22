@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Krishna Swallows the Forest Fire</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px;
+      background: #111;
+    }
+
+    .lang-selector label {
+      color: #ffcc00;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .lang-selector select {
+      padding: 5px 10px;
+      background-color: #222;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .story-container {
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .story-title {
+      font-size: 2.5em;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    .story-image {
+      width: 90%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      margin-bottom: 30px;
+    }
+
+    .story-content {
+      text-align: justify;
+      font-size: 1.3em;
+      padding: 0 10%;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .story-content {
+        padding: 0 5%;
+        font-size: 1.1em;
+      }
+
+      .story-title {
+        font-size: 1.8em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="lang-selector">
+      <label for="language">Select Language:</label>
+      <select id="language" onchange="loadStory()">
+        <option value="en">English</option>
+        <option value="te">తెలుగు</option>
+        <option value="hi">हिन्दी</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="story-container">
+    <h1 class="story-title" id="story-title">Krishna Swallows the Forest Fire</h1>
+    <img
+      id="story-image"
+      class="story-image"
+      src="https://cdn2.momjunction.com/wp-content/uploads/2014/05/Krishna-swallows-the-forest-fire.jpg.avif"
+      alt="Krishna Swallows the Forest Fire"
+    />
+    <div class="story-content" id="story-content">
+      <!-- Content loads here -->
+    </div>
+  </div>
+
+  <script>
+    const stories = {
+      en: {
+        title: "Krishna Swallows the Forest Fire",
+        content: `One fine summer day, Lord Krishna, along with his friends and their cows, went deep into a forest. The children became so engrossed in their games and fun that they didn’t notice a wildfire beginning to spread.
+By the time they realized, the fire had surrounded them and come dangerously close. Terrified, the children pleaded with Krishna to save them.
+Krishna, with a calm smile, asked everyone to close their eyes. As soon as they obeyed, Krishna opened his mouth and magically swallowed the colossal wildfire, protecting all his friends, the cows, and the entire forest.
+This divine act once again proved Krishna’s godly powers and love for his devotees.`
+      },
+      te: {
+        title: "కృష్ణుడు అరణ్యాగ్ని నిగళించటం",
+        content: `ఒక వేడి వేసవి రోజున కృష్ణుడు తన స్నేహితులు మరియు వారి ఆవులతో కలిసి అడవిలోకి వెళ్ళాడు. వారు ఆటలతో నిమగ్నమై ఉండటంతో, సమీపంలో వేగంగా వ్యాపిస్తున్న అరణ్యాగ్నిని గమనించలేదు.
+ఆ సమయంలో వారు అగ్ని మధ్యలో చిక్కుకున్నారని గ్రహించారు. భయంతో స్నేహితులు కృష్ణుడిని రక్షించమని వేడుకున్నారు.
+కృష్ణుడు ప్రశాంతంగా అందరినీ కళ్ళు మూసుకోవాలని అన్నాడు. వారు కళ్ళు మూసుకున్న వెంటనే, కృష్ణుడు తన నోరు తెరిచి ఆ మహత్తరమైన అరణ్యాగ్నిని నిగళించాడు.
+ఈ అద్భుత కార్యం ద్వారా కృష్ణుడు తన దివ్య శక్తులను మరియు భక్తుల పట్ల తన ప్రేమను మరోసారి చాటాడు.`
+      },
+      hi: {
+        title: "कृष्ण ने जंगल की आग को निगल लिया",
+        content: `एक गर्मी के दिन, भगवान कृष्ण अपने दोस्तों और गायों के साथ जंगल में घूमने गए। खेलते हुए वे इतने मस्त हो गए कि उन्हें पता ही नहीं चला कि जंगल में भयंकर आग फैल रही है।
+जब तक उन्हें एहसास हुआ, तब तक आग उनके बहुत करीब आ गई थी। घबराए हुए बच्चों ने कृष्ण से उन्हें बचाने की प्रार्थना की।
+कृष्ण मुस्कराते हुए बोले, “सब अपनी आँखें बंद कर लो।” जैसे ही सबने आँखें बंद कीं, कृष्ण ने अपना मुँह खोला और उस विशाल जंगल की आग को निगल लिया।
+इस चमत्कारी कार्य से कृष्ण ने एक बार फिर साबित किया कि वे केवल एक बालक नहीं बल्कि साक्षात ईश्वर हैं, जो अपने भक्तों की हर संकट से रक्षा करते हैं।`
+      }
+    };
+
+    function loadStory() {
+      const lang = document.getElementById('language').value;
+      const story = stories[lang];
+      document.getElementById('story-title').innerText = story.title;
+      document.getElementById('story-content').innerHTML = story.content.replace(/\n/g, "<br><br>");
+    }
+
+    window.onload = loadStory;
+  </script>
+
+</body>
+</html>
+

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lord Krishna and the Fruit Woman</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #fff;
+      padding: 20px;
+      margin: 0;
+    }
+
+    .lang-selector {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .lang-selector label {
+      font-weight: bold;
+      margin-right: 10px;
+      color: #ffcc00;
+    }
+
+    .story-container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .story-title {
+      font-size: 2em;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    .story-image {
+      width: 60%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+      margin-bottom: 20px;
+    }
+
+    .story-content {
+      font-size: 1.2em;
+      text-align: justify;
+      padding: 0 10%;
+      line-height: 1.6;
+    }
+
+    select {
+      padding: 6px 10px;
+      border-radius: 5px;
+      border: none;
+      background: #222;
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-selector">
+    <label for="language">Select Language:</label>
+    <select id="language" onchange="loadStory()">
+      <option value="en">English</option>
+      <option value="te">Telugu</option>
+      <option value="hi">Hindi</option>
+    </select>
+  </div>
+
+  <div class="story-container">
+    <h1 class="story-title" id="story-title">Lord Krishna and the Fruit Woman</h1>
+    <img
+      id="story-image"
+      class="story-image"
+      src="https://cdn2.momjunction.com/wp-content/uploads/2014/05/Lord-Krishna-and-the-fruit-woman.jpg.avif"
+      alt="Lord Krishna and the Fruit Woman"
+    />
+    <div class="story-content" id="story-content">
+      <!-- Content loads here -->
+    </div>
+  </div>
+
+  <script>
+    const stories = {
+      en: {
+        title: "Lord Krishna and the Fruit Woman",
+        content: `There was a fruit seller in Mathura, who heard about toddler Krishna and his cuteness from people. She heard about him so much that she decided to go to Gokul and see his charm.
+She went to Gokul and kept selling fruits there, hoping to see little Krishna one day. One day, while passing by Krishna’s house, she saw him and he asked her for some fruits.
+The fruit vendor smiled and said she would give him fruits if he sat on her lap and called her “mother.” Krishna hesitated at first, but then sweetly said “mother” and sat in her lap. The woman, overwhelmed with joy, gave him all the fruits she had.`
+      },
+      te: {
+        title: "కృష్ణుడు మరియు పండ్ల అమ్మాయి",
+        content: `మథురలో ఒక పండ్ల అమ్మాయి ఉండేది. ఆమె చిన్న కృష్ణుడి గురించి, అతని చందమామలా అందం గురించి ఎన్నో విషయాలు విన్నది. ఆ మాటలు విని అతన్ని చూడాలని కోరిక పుట్టింది.
+ఆమె గోకులోకి వెళ్లి పండ్లు అమ్ముతూ, ఎప్పటికైనా కృష్ణుడిని చూస్తానని ఆశతో ఉండేది. ఒక రోజు ఆమె కృష్ణుడి ఇంటి వద్ద వెళ్లినప్పుడు, కృష్ణుడు ఆమెను చూసి పండ్లు అడిగాడు.
+ఆమె చిరునవ్వుతో “పండ్లు కావాలంటే నన్ను తల్లి అని పిలవాలి, నా మడిలో కూర్చోవాలి” అని చెప్పింది. కృష్ణుడు తొలుత మొహమాట పడ్డాడు, కానీ చివరికి "తల్లి" అని పిలిచాడు. ఆమె膝పై కూర్చుని పండ్లు అడిగాడు. ఆనందంతో ఆమె తన వద్ద ఉన్న అన్ని పండ్లను అతనికి ఇచ్చింది.`
+      },
+      hi: {
+        title: "भगवान कृष्ण और फल वाली औरत",
+        content: `मथुरा में एक फल बेचने वाली औरत थी। उसने बालकृष्ण की सुंदरता और मासूमियत के बारे में बहुत सुना था। वह इतनी प्रभावित हुई कि उसने गोकुल जाकर कृष्ण को देखने का निश्चय किया।
+वह गोकुल जाकर फल बेचने लगी, इस आशा में कि एक दिन वह नन्हें कृष्ण को देख पाएगी। एक दिन जब वह कृष्ण के घर के पास से गुजर रही थी, कृष्ण ने उसके ताजे फलों को देखकर फल माँगे।
+फल वाली मुस्कुराई और बोली, "अगर तुम मुझे 'माँ' कहकर मेरी गोद में बैठो, तो मैं तुम्हें फल दूँगी।" कृष्ण पहले हिचकिचाया, लेकिन फिर वह "माँ" कहकर उसकी गोद में बैठ गया और फल माँगे। वह औरत भावुक होकर अपने सारे फल कृष्ण को दे देती है।`
+      }
+    };
+
+    function loadStory() {
+      const lang = document.getElementById('language').value;
+      const story = stories[lang];
+      document.getElementById('story-title').innerText = story.title;
+      document.getElementById('story-content').innerHTML = story.content.replace(/\n/g, "<br><br>");
+    }
+
+    window.onload = loadStory;
+  </script>
+
+</body>
+</html>

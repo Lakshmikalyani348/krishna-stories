@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lord Krishna Lifts the Govardhan Hill</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .lang-selector {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .lang-selector label {
+      font-weight: bold;
+      margin-right: 10px;
+      color: #ffcc00;
+    }
+
+    .story-container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .story-title {
+      font-size: 2.4em;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    .story-image {
+      width: 60%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+      margin-bottom: 20px;
+    }
+
+    .story-content {
+      font-size: 1.3em;
+      text-align: justify;
+      padding: 0 10%;
+      line-height: 1.6;
+    }
+
+    select {
+      padding: 6px 10px;
+      border-radius: 5px;
+      border: none;
+      background: #222;
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-selector">
+    <label for="language">Select Language:</label>
+    <select id="language" onchange="loadStory()">
+      <option value="en">English</option>
+      <option value="te">Telugu</option>
+      <option value="hi">Hindi</option>
+    </select>
+  </div>
+
+  <div class="story-container">
+    <h1 class="story-title" id="story-title">Lord Krishna Lifts the Govardhan Hill</h1>
+    <img
+      id="story-image"
+      class="story-image"
+      src="https://cdn2.momjunction.com/wp-content/uploads/2014/05/Lord-Krishna-lifts-the-Govardhan-hill.jpg.avif"
+      alt="Krishna lifting Govardhan Hill"
+    />
+    <div class="story-content" id="story-content">
+      <!-- Story will be loaded here -->
+    </div>
+  </div>
+
+  <script>
+    const stories = {
+      en: {
+        title: "Lord Krishna Lifts the Govardhan Hill",
+        content: `Every year, the people of Vrindavan perform prayers to please Lord Indra for good rains for their crops.
+One year, Lord Krishna explains to the villagers about the importance of ‘Dharma’. He elaborates on how they should focus on working hard and being sincere in their duties. Everyone agrees and decides not to offer prayers to Lord Indra.
+This angers Lord Indra, who sends a massive storm to Vrindavan. The village floods and people begin looking for shelter. Krishna lifts the Govardhan Hill on his little finger, providing shelter for all the villagers and their animals.
+They stay safely under the hill for several days.
+Finally, Lord Indra realizes his mistake and stops the rain, seeking forgiveness from Krishna.`
+      },
+      te: {
+  title: "కృష్ణుడు గోవర్ధనగిరిని లేపిన కథ",
+  content: `ప్రతి సంవత్సరం, బృందావనంలోని ప్రజలు వర్షాలు పడేలా దేవేంద్రుడిని పూజించేవారు.
+
+ఒక సంవత్సరం, కృష్ణుడు వారికి ధర్మం యొక్క ప్రాముఖ్యతను వివరించాడు. ప్రజలు తమ కర్తవ్యాలలో నిష్ఠగా ఉండాలని, కష్టపడి పనిచేయాలని చెప్పాడు. అందరూ కృష్ణుడి మాటలు వినిపించి, దేవేంద్రుడిని పూజించకూడదని నిర్ణయించుకున్నారు.
+
+దీనితో కోపంగా ఉన్న దేవేంద్రుడు భారీ వర్షాన్ని బృందావనంపై కురిపించాడు. గ్రామం వరదలో మునిగిపోయింది. ప్రజలు ఆశ్రయం కోసం తపించసాగారు.
+
+ఆ సమయంలో కృష్ణుడు తన చిన్న వేలితో గోవర్ధనగిరిని పైకెత్తి, అందరికీ మరియు వారి పశువులకు రక్షణ కల్పించాడు.
+
+కొన్ని రోజులు వర్షం ఆగకపోయినా ప్రజలు అందరూ కృష్ణుడి కింద సురక్షితంగా ఉండగలిగారు.
+
+చివరికి దేవేంద్రుడు తన తప్పును గ్రహించి కృష్ణుని క్షమించమని కోరాడు.`
+},
+
+
+      
+      hi: {
+        title: "भगवान कृष्ण ने गोवर्धन पर्वत उठाया",
+        content: `हर साल वृंदावन के लोग अपनी फसलों के लिए अच्छी बारिश की कामना करते हुए इंद्र देव की पूजा करते थे।
+एक वर्ष, भगवान कृष्ण ने गाँव वालों को ‘धर्म’ का महत्व बताया। उन्होंने समझाया कि सभी को कड़ी मेहनत करनी चाहिए और अपने कर्तव्यों को निष्ठा से निभाना चाहिए। सब लोग सहमत हुए और इंद्र देव की पूजा न करने का निर्णय लिया।
+यह सुनकर इंद्र देव क्रोधित हो गए और उन्होंने गाँव पर भारी तूफ़ान भेजा। वृंदावन जलमग्न हो गया और लोग आश्रय की तलाश करने लगे।
+तब भगवान कृष्ण ने अपनी छोटी उंगली पर गोवर्धन पर्वत को उठा लिया और सभी लोगों व उनके पशुओं को आश्रय दिया।
+लोग कई दिनों तक पर्वत के नीचे सुरक्षित रहे।
+अंत में, इंद्र देव ने अपनी गलती स्वीकार की और कृष्ण से क्षमा मांगी।`
+      }
+    };
+
+    function loadStory() {
+      const lang = document.getElementById('language').value;
+      const story = stories[lang];
+      document.getElementById('story-title').innerText = story.title;
+      document.getElementById('story-content').innerHTML = story.content.replace(/\n/g, "<br><br>");
+    }
+
+    window.onload = loadStory;
+  </script>
+
+</body>
+</html>

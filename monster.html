@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lord Krishna and the Disguised Monster</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .lang-selector {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .lang-selector label {
+      color: #ffcc00;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .story-container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .story-title {
+      font-size: 2.4em;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    .story-image {
+      width: 60%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+      margin-bottom: 20px;
+    }
+
+    .story-content {
+      font-size: 1.3em;
+      text-align: justify;
+      padding: 0 10%;
+      line-height: 1.6;
+    }
+
+    select {
+      padding: 6px 10px;
+      border-radius: 5px;
+      border: none;
+      background: #222;
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-selector">
+    <label for="language">Select Language:</label>
+    <select id="language" onchange="loadStory()">
+      <option value="en">English</option>
+      <option value="te">Telugu</option>
+      <option value="hi">Hindi</option>
+    </select>
+  </div>
+
+  <div class="story-container">
+    <h1 class="story-title" id="story-title">Lord Krishna and the Disguised Monster</h1>
+    <img
+      id="story-image"
+      class="story-image"
+      src="https://cdn2.momjunction.com/wp-content/uploads/2014/05/Lord-Krishna-and-the-disguised-monster.jpg.avif"
+      alt="Krishna and the Disguised Monster"
+    />
+    <div class="story-content" id="story-content"></div>
+  </div>
+
+  <script>
+    const stories = {
+      en: {
+        title: "Lord Krishna and the Disguised Monster",
+        content: `Lord Krishna and his brother Balarama helped their father take care of the cattle. Every day, they would take the cows out for grazing along with their friends. Krishna would often play the flute and sing while the cows grazed peacefully.
+One day, Krishna noticed a strange cow among the herd. Its appearance was different, and it frightened the children. Krishna and Balarama realized that it was not a real cow but a monster in disguise.
+Without creating panic, the two brothers slowly approached the cow, held it by its horns, and hurled it into a nearby lake. The monster was defeated, and everyone was safe once again.`
+      },
+      te: {
+        title: "కృష్ణుడు మరియు మారిన దయ్యం",
+        content: `కృష్ణుడు మరియు అతని అన్న బాలరాం తమ తండ్రికి ఆవులను చూసుకునే విషయంలో సహాయం చేసేవారు. వారు ప్రతిరోజూ తమ స్నేహితులతో కలిసి ఆవులను మేతకు తీసుకెళ్ళేవారు. కృష్ణుడు ఫ్లూట్ వాయించి పాటలు పాడుతూ ఆవులను ఆనందంగా మేత చేయించేవాడు.
+ఒక రోజు కృష్ణుడు ఆవుల గుంపులో ఓ విచిత్రమైన ఆవును గమనించాడు. అది భిన్నంగా కనిపించడంతో పిల్లలు భయపడిపోయారు. కృష్ణుడు మరియు బాలరాం అది అసలైన ఆవు కాదని, ఒక దయ్యంగా మారినదని తెలుసుకున్నారు.
+తీక్షణంగా స్పందించకుండా, వారు ఆ ఆవును తలకొనుగొని సమీపంలోని చెరువులో విసిరేశారు. దయ్యాన్ని ఓడించి అందరినీ రక్షించారు.`
+      },
+      hi: {
+        title: "कृष्ण और भेष बदलकर आया राक्षस",
+        content: `भगवान कृष्ण और उनके भाई बलराम अपने पिता की गायों की देखभाल में मदद करते थे। वे अपने दोस्तों के साथ हर दिन गायों को चराने ले जाते थे। कृष्ण बांसुरी बजाते और गीत गाते थे, जिससे गायें शांति से चरती थीं।
+एक दिन कृष्ण ने झुंड में एक अजीब सी गाय देखी। उसका रूप देखकर बच्चे डर गए। कृष्ण और बलराम ने तुरंत समझ लिया कि वह एक असली गाय नहीं, बल्कि एक राक्षस था जो गाय का रूप धारण किए हुए था।
+दोनों भाइयों ने चुपचाप उस गाय के पास जाकर उसके सींग पकड़कर उसे पास की झील में फेंक दिया। राक्षस का अंत हो गया और सभी बच्चे सुरक्षित रहे।`
+      }
+    };
+
+    function loadStory() {
+      const lang = document.getElementById('language').value;
+      const story = stories[lang];
+      document.getElementById('story-title').innerText = story.title;
+      document.getElementById('story-content').innerHTML = story.content.replace(/\n/g, "<br><br>");
+    }
+
+    window.onload = loadStory;
+  </script>
+
+</body>
+</html>

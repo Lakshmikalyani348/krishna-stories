@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Krishna's Dance on Kaaliya</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .lang-selector {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .lang-selector label {
+      font-weight: bold;
+      margin-right: 10px;
+      color: #ffcc00;
+    }
+
+    .story-container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .story-title {
+      font-size: 2.4em;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    .story-image {
+      width: 60%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+      margin-bottom: 20px;
+    }
+
+    .story-content {
+      font-size: 1.3em;
+      color: #f0f0f0;
+      text-align: justify;
+      padding: 0 10%;
+      line-height: 1.5;
+    }
+
+    select {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+      background: #222;
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-selector">
+    <label for="language">Select Language:</label>
+    <select id="language" onchange="loadStory()">
+      <option value="en">English</option>
+      <option value="te">Telugu</option>
+      <option value="hi">Hindi</option>
+    </select>
+  </div>
+
+  <div class="story-container">
+    <h1 class="story-title" id="story-title">Krishna’s Dance on Kaaliya</h1>
+    <img
+      id="story-image"
+      class="story-image"
+      src="https://cdn2.momjunction.com/wp-content/uploads/2014/05/Krishnas-dance-on-Kaaliya.jpg.avif"
+      alt="Krishna dances on Kaaliya"
+    />
+    <div class="story-content" id="story-content">
+      A giant black serpent, Kaaliya enters Vrindavan and begins living, along with his family, in the river Yamuna. Kaaliya slowly turns the river water poisonous with its venom, making the lives of villagers miserable.
+
+      Lord Krishna could not see his people suffering and decides to fight Kaaliya. Krishna gathers the weight of the entire planet, jumps on Kaaliya’s head and starts hitting the serpent by dancing on it.
+
+      Kaaliya begins vomiting blood and loses all his strength. When Kaaliya is nearing death, his wives appear and pray to Krishna, asking for mercy. Krishna grants mercy to the serpent; Kaaliya realizes the greatness and strength of Lord Krishna and promises to leave the river.
+    </div>
+  </div>
+
+  <script>
+    const stories = {
+      en: {
+        title: "Krishna’s Dance on Kaaliya",
+        content: `In the peaceful village of Vrindavan, life once revolved around the sacred Yamuna River. The villagers used its waters for everything — drinking, bathing, and performing rituals. But one day, a terrifying danger emerged. A gigantic black serpent named Kaaliya, along with his numerous serpent wives, took shelter in the depths of the Yamuna.
+Kaaliya’s presence turned the once-pure river into a toxic stream. His venomous breath and poison turned the water green and lifeless. Birds stopped flying near it, fish died, and the villagers grew fearful. Even trees near the banks began to wilt, and animals refused to drink from the poisoned water.
+Lord Krishna, then a young boy living among the cowherds, saw the suffering of the people and decided to end their misery. One day, while playing with his friends near the river, Krishna jumped into the poisoned waters of the Yamuna to confront Kaaliya.
+The moment Krishna entered the water, a fierce disturbance was felt. The mighty serpent rose from the depths, hissing with rage, and coiled his body around Krishna. The villagers, who had gathered near the banks, gasped in horror. The sky grew dark, and everyone feared the worst.
+But Krishna, being the incarnation of the Supreme Lord, expanded himself within the coils of the serpent and broke free effortlessly. Then, with divine grace, he leapt onto Kaaliya’s multiple hoods and began dancing upon them. Each step of his divine feet crushed Kaaliya’s pride and power. The river trembled with every beat of Krishna’s cosmic dance.
+As Krishna danced, Kaaliya vomited blood and lost his strength. He realized that this was no ordinary child — this was the Lord himself. Seeing Kaaliya near death, his many serpent wives emerged from the waters. With folded hands and tears in their eyes, they prayed to Krishna for mercy.
+Krishna, ever compassionate, stopped his dance. He looked upon Kaaliya with grace and forgave him. Kaaliya, humbled and purified, bowed down before the Lord and promised to leave the Yamuna forever. Krishna instructed him to go to the ocean with his family and never return.
+As Kaaliya left the Yamuna, the water slowly cleared. The birds returned, the trees regained their color, and the village once again rejoiced. The people of Vrindavan celebrated Krishna's victory and hailed him as their divine protector.
+This event not only saved Vrindavan but also symbolized the triumph of divine love and righteousness over pride, poison, and evil.`
+      },
+      te: {
+        title: "కాళీయ పైన కృష్ణుని నృత్యం",
+        content: `శాంతమైన వృద్ధావన గ్రామంలో జీవితం యమునా నదిని ఆధారంగా సాగేది. గ్రామ ప్రజలు ఆ నీటిని తాగడానికి, స్నానానికి, పూజలకు ఉపయోగించేవారు. కానీ ఒక రోజు, భారీ నలుపు పాము కాళీయుడు తన కుటుంబంతో కలిసి నదిలో నివసించసాగాడు.
+కాళీయుని విషం యమునా నీటిని విషపూరితంగా మార్చేసింది. పక్షులు సమీపంలోకి రావడం మానేసాయి, చేపలు చనిపోయాయి, జంతువులు ఆ నీటిని తాగడానికి భయపడ్డాయి. చెట్లు ఎండిపోయాయి.
+కృష్ణుడు తన ప్రజల బాధను చూడలేక నదిలోకి దూకి కాళీయుని ఎదుర్కొన్నాడు. అతను పామును చుట్టుముట్టిన వెంటనే ఆకాశం చీకటి అయ్యింది. కానీ కృష్ణుడు తన వైభవంతో బయటపడి కాళీయుని తలలపై నృత్యం ప్రారంభించాడు.
+ప్రతి అడుగుతో కాళీయుని గర్వాన్ని తుడిచిపెట్టాడు. కాళీయుడు రక్తం ఉమ్ముతూ బలహీనుడయ్యాడు. అతని భార్యలు వచ్చి కృష్ణుని క్షమించమని ప్రార్థించాయి.
+కృష్ణుడు కాళీయుని క్షమించి, సముద్రానికి వెళ్ళమని చెప్పాడు. కాళీయుడు ఒప్పుకొని నదిని వదిలాడు. యమునా మళ్ళీ శుభ్రమైంది. గ్రామం మళ్లీ సంతోషంగా మారింది.`
+      },
+      hi: {
+        title: "कृष्ण का कालिया पर नृत्य",
+        content: `वृंदावन गाँव में जीवन यमुना नदी पर निर्भर था। एक दिन, एक विशाल काला साँप कालिया अपनी पत्नियों के साथ यमुना में आकर बस गया।
+उसके विष ने नदी को ज़हरीला बना दिया। पक्षी उड़ना छोड़ दिए, मछलियाँ मर गईं, और पशु पानी पीने से डर गए। पेड़ सूखने लगे।
+भगवान कृष्ण, अपने लोगों की पीड़ा देखकर, यमुना में कूद गए और कालिया से भिड़े। कालिया ने उन्हें अपनी कुंडली में जकड़ लिया, लेकिन कृष्ण सहजता से छूट गए और कालिया के सिरों पर नृत्य करना शुरू कर दिया।
+हर पग से कालिया का अहंकार टूट गया। वह खून उगलने लगा। उसकी पत्नियाँ आकर कृष्ण से क्षमा माँगने लगीं।
+कृष्ण ने करुणा दिखाई, उसे क्षमा किया और नदी छोड़ने का आदेश दिया। कालिया चला गया और यमुना फिर से स्वच्छ हो गई। वृंदावन के लोग कृष्ण की जय-जयकार करने लगे।`
+      }
+    };
+
+    function loadStory() {
+      const lang = document.getElementById('language').value;
+      const story = stories[lang];
+      document.getElementById('story-title').innerText = story.title;
+      document.getElementById('story-content').innerHTML = story.content.replace(/\n/g, "<br><br>");
+    }
+
+    window.onload = loadStory;
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lord Krishna Named Govinda</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .lang-selector {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .lang-selector label {
+      font-weight: bold;
+      margin-right: 10px;
+      color: #ffcc00;
+    }
+
+    .story-container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .story-title {
+      font-size: 2.4em;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    .story-image {
+      width: 60%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+      margin-bottom: 20px;
+    }
+
+    .story-content {
+      font-size: 1.3em;
+      text-align: justify;
+      padding: 0 10%;
+      line-height: 1.5;
+    }
+
+    select {
+      padding: 6px 10px;
+      border-radius: 5px;
+      border: none;
+      background: #222;
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-selector">
+    <label for="language">Select Language:</label>
+    <select id="language" onchange="loadStory()">
+      <option value="en">English</option>
+      <option value="te">Telugu</option>
+      <option value="hi">Hindi</option>
+    </select>
+  </div>
+
+  <div class="story-container">
+    <h1 class="story-title" id="story-title">Lord Krishna Named Govinda</h1>
+    <img
+      id="story-image"
+      class="story-image"
+      src="https://cdn2.momjunction.com/wp-content/uploads/2014/05/Lord-Krishna-named-Govinda.jpg.avif"
+      alt="Lord Krishna Named Govinda"
+    />
+    <div class="story-content" id="story-content">
+      <!-- Content loads here -->
+    </div>
+  </div>
+
+  <script>
+    const stories = {
+      en: {
+        title: "Lord Krishna Named Govinda",
+        content: `Lord Krishna has more than 108 names, and one of them is Govinda, meaning “protector of cows.” There is a story behind how he received this sacred name.
+One day, the celestial cow Kamadhenu visited Krishna. She told him that she came from Devlok, the heavenly kingdom, to perform abhishekam, the crowning ceremony. Kamadhenu bathed Krishna with holy water brought from the heavens and thanked him for protecting all the cows.
+Lord Indra, the king of gods, also came and joined the ceremony. He too performed abhishekam and gave Krishna the divine name Govinda.`
+      },
+      te: {
+        title: "గోవింద అనే పేరును పొందిన కృష్ణుడు",
+        content: `శ్రీకృష్ణునికి 108 కన్నా ఎక్కువ పేర్లు ఉన్నాయి. అందులో ఒకటి గోవింద – అంటే గోవుల రక్షకుడు. ఆయన ఈ పేరును ఎలా పొందారన్నదానికి ఒక కథ ఉంది.
+ఒకరోజు, ఆకాశంలో ఉన్న దేవ లోకం నుంచి కామధేను అనే పరమ పవిత్రమైన గోవు కృష్ణుడిని కలిసింది. ఆమె అతనిని అభిషేకించడానికి వచ్చిందని చెప్పింది.
+కామధేను స్వర్గంలోని పవిత్ర జలాలతో కృష్ణుని అభిషేకం చేసి, గోవులను రక్షించినందుకు కృతజ్ఞతలు తెలిపింది. ఆ సమయంలో ఇంద్రుడు కూడా అక్కడికి వచ్చి, కృష్ణుని అభిషేకించి అతనికి గోవింద అనే దివ్య నామాన్ని ఇచ్చాడు.`
+      },
+      hi: {
+        title: "कृष्ण को नाम मिला गोविंद",
+        content: `भगवान श्रीकृष्ण के 108 से भी अधिक नाम हैं, जिनमें से एक नाम है गोविंद, जिसका अर्थ है “गायों के रक्षक।” इस नाम के पीछे एक कहानी है।
+एक दिन, स्वर्ग की पवित्र गाय कामधेनु कृष्ण से मिलने आई। उसने कहा कि वह देवलोक से आई है ताकि वह उनका अभिषेक कर सके।
+कामधेनु ने स्वर्ग से लाई गई पवित्र जल से कृष्ण का अभिषेक किया और गायों की रक्षा करने के लिए उन्हें धन्यवाद दिया। तभी इंद्रदेव भी वहाँ आए और अभिषेक कर उन्हें गोविंद नाम से सम्मानित किया।`
+      }
+    };
+
+    function loadStory() {
+      const lang = document.getElementById('language').value;
+      const story = stories[lang];
+      document.getElementById('story-title').innerText = story.title;
+      document.getElementById('story-content').innerHTML = story.content.replace(/\n/g, "<br><br>");
+    }
+
+    window.onload = loadStory;
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Krishna Stories Board</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://images.pexels.com/photos/1809644/pexels-photo-1809644.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    .board-container {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      max-width: 800px;
+      margin: 60px auto;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .board-heading {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #ffe600;
+      text-shadow: 2px 2px 5px #000;
+    }
+
+    .story-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      font-size: 20px;
+      padding: 0 10px;
+    }
+
+    .story-list a {
+      text-decoration: none;
+      background-color: #fff4d9;
+      color: #000;
+      padding: 10px 15px;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+      font-weight: 500;
+    }
+
+    .story-list a:hover {
+      background-color: #ffe600;
+      color: #000;
+    }
+
+    .next-button-container,
+    .back-button-container {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .next-button,
+    .back-button {
+      background-color: #ffcc00;
+      color: #000;
+      padding: 10px 25px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .next-button:hover,
+    .back-button:hover {
+      background-color: #ffc107;
+    }
+  </style>
+</head>
+<body>
+  <div class="board-container">
+    <h1 class="board-heading">📖 Select a Krishna Story</h1>
+
+    <div class="story-list">
+      <a href="stories/birth.html">1. The Birth of Krishna</a>
+      <a href="stories/putana.html">2. Krishna Kills Putana</a>
+      <a href="stories/aristasra.html">3. Krishna and Arishtasura</a>
+      <a href="stories/universe.html">4. The Universe in Krishna's Mouth</a>
+      <a href="stories/butter.html">5. Krishna Steals Butter</a>
+      <a href="stories/kaaliya.html">6. Krishna Dances on Kaaliya</a>
+      <a href="stories/monster.html">7. Krishna & the Disguised Monster</a>
+      <a href="stories/govardhanagiri.html">8. Lifts Govardhan Hill</a>
+      <a href="stories/fire.html">9. Krishna Swallows the Forest Fire</a>
+      <a href="stories/govinda.html">10. Lord Krishna Named Govinda</a>
+      <a href="stories/headache.html">11. Krishna’s Headache</a>
+      <a href="stories/kamsa.html">12. Krishna Kills Kamsa</a>
+      <a href="stories/radha.html">13. Radha Krishna Love</a>
+      <a href="stories/fruit.html">14. Fruit Seller Story</a>
+      <a href="stories/varuna.html">15. Krishna and Varuna</a>
+      <a href="stories/brahma.html">16. Krishna and Brahma</a>
+    </div>
+
+    <div class="next-button-container">
+      <a href="thankyou.html" class="next-button">Next ➡️</a>
+    </div>
+
+    <div class="back-button-container">
+      <a href="index.html" class="back-button">⬅️ Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>

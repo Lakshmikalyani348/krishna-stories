@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Krishna and Arishtasura</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .lang-selector {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .lang-selector label {
+      font-weight: bold;
+      margin-right: 10px;
+      color: #ffcc00;
+    }
+
+    .story-container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .story-title {
+      font-size: 2.4em;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    .story-image {
+      width: 60%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+      margin-bottom: 20px;
+    }
+
+    .story-content {
+      font-size: 1.4em;
+      color: #f0f0f0;
+      text-align: justify;
+      padding: 0 10%;
+      line-height: 1.5;
+    }
+
+    select {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+      background: #222;
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-selector">
+    <label for="language">Select Language:</label>
+    <select id="language" onchange="loadStory()">
+      <option value="en">English</option>
+      <option value="te">Telugu</option>
+      <option value="hi">Hindi</option>
+    </select>
+  </div>
+
+  <div class="story-container">
+    <h1 class="story-title" id="story-title">Krishna and Arishtasura</h1>
+    <img
+      id="story-image"
+      class="story-image"
+      src="https://i.ytimg.com/vi/lzRDPMdYeaE/maxresdefault.jpg"
+      alt="Krishna and Arishtasura"
+    />
+    <div class="story-content" id="story-content"></div>
+  </div>
+
+  <script>
+    const stories = {
+      en: {
+        title: "Krishna and Arishtasura",
+        content: `One day, when Krishna was playing with his friends in the village of Vrindavan, an enormous and terrifying bull stormed into the village. The bull began attacking people, destroying huts, and creating chaos everywhere. People screamed in fear and ran in all directions to save their lives.
+Krishna immediately noticed the panic and ran toward the raging bull. As he observed the creature, he realized that this was no ordinary bull — it was the demon Arishtasura, sent by his wicked uncle Kansa to kill him.
+With fearless determination, Krishna confronted Arishtasura. The demon charged at Krishna with great force, digging his sharp horns into the ground. But Krishna dodged swiftly and held the bull by its horns. A fierce battle followed — the demon roared, snorted, and tried to shake off Krishna with his massive strength, but Krishna was stronger and braver.
+With divine power and skill, Krishna eventually overpowered the demon. He grabbed Arishtasura by the horns, twisted his neck, and threw him to the ground, killing him.
+As Arishtasura fell, a glowing spirit emerged from his body. The demon’s soul bowed to Krishna and said, “O Lord, I was once a disciple of Lord Brihaspati, but I disrespected my guru and was cursed to become a demon. Now, by dying at your hands, I am freed from my curse. Thank you for delivering me, O Krishna.”
+Thus, Lord Krishna not only saved the people of Vrindavan but also freed a cursed soul through his divine grace.`
+      },
+      te: {
+        title: "కృష్ణుడు మరియు అరిష్టాసురుడు",
+        content: `ఒక రోజు కృష్ణుడు తన స్నేహితులతో వృద్ధావనంలో ఆడుకుంటున్నాడు, అప్పుడు ఓ భారీ భయానక ఎద్దు ఊర్లోకి వచ్చి ప్రజలపై దాడి చేయడం మొదలు పెట్టాడు. ప్రజలు భయంతో పరుగులు తీశారు.
+కృష్ణుడు ఆ ఆందోళనను గమనించి ఎద్దువైపు పరుగెత్తాడు. ఇది సాధారణ ఎద్దు కాదని, తన మామ కంసుడు పంపిన అరిష్టాసురుడని అతను గ్రహించాడు.
+కృష్ణుడు ధైర్యంగా అరిష్టాసురుడిని ఎదుర్కొన్నాడు. అరిష్టాసురుడు తీవ్రమైన శక్తితో దాడి చేశాడు, కానీ కృష్ణుడు చాకచక్యంగా తప్పించుకుని అతన్ని హోర్న్లతో పట్టుకున్నాడు. తీవ్రమైన యుద్ధం జరిగింది. చివరకు కృష్ణుడు అతన్ని నేలపై పడగొట్టి చంపాడు.
+రాక్షసుని ఆత్మ బయటకు వచ్చి కృష్ణుడికి నమస్కరించింది. “ఓ ప్రభూ, నేను బ్రుహస్పతి అనే గురువు శిష్యుడిని, కానీ అతన్ని గౌరవించకపోవడం వల్ల శాపగ్రస్తుడిని అయ్యాను. నీవు నన్ను చంపడం వల్ల నాకు విముక్తి లభించింది.”
+కృష్ణుడు వృద్ధావన ప్రజలను రక్షించడమే కాకుండా ఒక శాపగ్రస్తుడిని కూడా విముక్తి కలిగించాడు.`
+      },
+      hi: {
+        title: "कृष्ण और अरिष्टासुर",
+        content: `एक दिन जब कृष्ण अपने दोस्तों के साथ वृंदावन में खेल रहे थे, तभी एक विशाल और भयानक सांड गाँव में घुस आया। वह सांड लोगों पर हमला करने लगा, झोपड़ियाँ तोड़ने लगा और पूरे गाँव में अफरा-तफरी मचा दी।
+कृष्ण ने तुरंत उस डरावनी स्थिति को देखा और उस सांड की ओर दौड़े। उन्होंने देखा कि वह कोई सामान्य सांड नहीं था, बल्कि वह राक्षस अरिष्टासुर था, जिसे उनके मामा कंस ने उन्हें मारने के लिए भेजा था।
+कृष्ण ने बहादुरी से उसका सामना किया। राक्षस ने पूरी ताकत से कृष्ण पर हमला किया, लेकिन कृष्ण ने चतुराई से बचते हुए उसके सींग पकड़ लिए। एक भयंकर युद्ध हुआ, जिसमें अंततः कृष्ण ने अरिष्टासुर को मार गिराया।
+जैसे ही अरिष्टासुर गिरा, उसके शरीर से एक तेजस्वी आत्मा बाहर निकली। उस आत्मा ने कृष्ण को प्रणाम किया और कहा, “हे प्रभु, मैं पहले गुरु बृहस्पति का शिष्य था, लेकिन मैंने उनका अपमान किया और मुझे राक्षस बनने का श्राप मिला। आज आपसे मारे जाने के कारण मुझे मुक्ति मिल गई। आपका धन्यवाद।”
+इस प्रकार, भगवान कृष्ण ने न केवल वृंदावन के लोगों की रक्षा की बल्कि एक श्रापित आत्मा को भी मुक्ति दी।`
+      }
+    };
+
+    function loadStory() {
+      const lang = document.getElementById('language').value;
+      const story = stories[lang];
+      document.getElementById('story-title').innerText = story.title;
+      document.getElementById('story-content').innerHTML = story.content.replace(/\n/g, "<br><br>");
+    }
+
+    window.onload = loadStory;
+  </script>
+
+</body>
+</html>

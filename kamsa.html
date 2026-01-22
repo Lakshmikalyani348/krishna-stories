@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Krishna Kills Kamsa</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .lang-selector {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .lang-selector label {
+      font-weight: bold;
+      margin-right: 10px;
+      color: #ffcc00;
+    }
+
+    .story-container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .story-title {
+      font-size: 2.4em;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    .story-image {
+      width: 60%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+      margin-bottom: 20px;
+    }
+
+    .story-content {
+      font-size: 1.3em;
+      color: #f0f0f0;
+      text-align: justify;
+      padding: 0 10%;
+      line-height: 1.6;
+    }
+
+    select {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+      background: #222;
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-selector">
+    <label for="language">Select Language:</label>
+    <select id="language" onchange="loadStory()">
+      <option value="en">English</option>
+      <option value="te">Telugu</option>
+      <option value="hi">Hindi</option>
+    </select>
+  </div>
+
+  <div class="story-container">
+    <h1 class="story-title" id="story-title">Krishna Kills Kamsa</h1>
+    <img
+      id="story-image"
+      class="story-image"
+      src="https://www.4to40.com/wp-content/uploads/2020/11/kansa-vadh.jpg"
+      alt="Krishna kills Kamsa"
+    />
+    <div class="story-content" id="story-content">
+      <!-- Default English -->
+      Kamsa, the tyrannical king of Mathura, was the cousin of Devaki, the mother of Lord Krishna.
+      Upon learning of Krishna’s birth, Kamsa sent Asuras to kill him, but Krishna defeated them all.
+      Eventually, Kamsa made a cunning plan to kill Krishna with the help of the gigantic wrestler Chanura.
+
+      Krishna beat Chanura and confronted Kamsa, holding him by his hair and pulling him down.
+      Kamsa lost balance and fell backward, after which Krishna beheaded him with his sword.
+      This marked the end of Kamsa’s cruel rule and the liberation of Mathura’s people.
+    </div>
+  </div>
+
+  <script>
+    const storyData = {
+      en: {
+        title: "Krishna Kills Kamsa",
+        content: `
+          Kamsa, the tyrannical king of Mathura, was the cousin of Devaki, the mother of Lord Krishna.
+          Upon learning of Krishna’s birth, Kamsa sent Asuras to kill him, but Krishna defeated them all.
+          Eventually, Kamsa made a cunning plan to kill Krishna with the help of the gigantic wrestler Chanura.
+
+          Krishna beat Chanura and confronted Kamsa, holding him by his hair and pulling him down.
+          Kamsa lost balance and fell backward, after which Krishna beheaded him with his sword.
+          This marked the end of Kamsa’s cruel rule and the liberation of Mathura’s people.
+        `
+      },
+      te: {
+        title: "కంసుని సంహారం",
+        content: `
+          కంసుడు మధుర నగరాన్ని పాలిస్తున్న క్రూర రాజు మరియు దేవకీకి అన్నయ్య. 
+          కృష్ణుని జన్మవార్త తెలుసుకున్న కంసుడు అతన్ని చంపేందుకు అసురులను పంపాడు, కానీ కృష్ణుడు వారిని ఓడించాడు.
+          ఆపై చనూర అనే మహా మల్లయోధుని సహాయంతో కంసుడు కుట్ర పన్నాడు.
+
+          కృష్ణుడు చనూరుని ఓడించి కంసుని తల పట్టుకొని కిందకు లాగాడు. 
+          కంసుడు వెనక్కి పడిపోయాడు. కృష్ణుడు ఖడ్గంతో కంసుని తల నరికి చంపాడు.
+          ఈ సంఘటనతో మధుర ప్రజలు కంసుని దుర్శాసన పాలన నుంచి విముక్తి పొందారు.
+        `
+      },
+      hi: {
+        title: "कंस वध",
+        content: `
+          कंस, मथुरा का अत्याचारी राजा था और देवकी का मामा था।
+          जब उसे कृष्ण के जन्म का पता चला, तो उसने असुरों को उन्हें मारने भेजा, लेकिन कृष्ण ने सभी को पराजित कर दिया।
+          बाद में कंस ने चाणूर नामक पहलवान की मदद से कृष्ण को मारने की योजना बनाई।
+
+          कृष्ण ने चाणूर को हराकर कंस का सामना किया, उसके बाल पकड़कर उसे नीचे गिरा दिया।
+          कंस गिर पड़ा और कृष्ण ने उसे तलवार से मार दिया।
+          इस प्रकार कंस की क्रूरता का अंत हुआ और मथुरा को मुक्ति मिली।
+        `
+      }
+    };
+
+    function loadStory() {
+      const lang = document.getElementById("language").value;
+      document.getElementById("story-title").innerText = storyData[lang].title;
+      document.getElementById("story-content").innerHTML = storyData[lang].content;
+    }
+  </script>
+
+</body>
+</html>
+
+
+

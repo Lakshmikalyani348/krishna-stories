@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Krishna’s Headache</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .lang-selector {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .lang-selector label {
+      font-weight: bold;
+      margin-right: 10px;
+      color: #ffcc00;
+    }
+
+    .story-container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .story-title {
+      font-size: 2.4em;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    .story-image {
+      width: 60%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+      margin-bottom: 20px;
+    }
+
+    .story-content {
+      font-size: 1.3em;
+      text-align: justify;
+      padding: 0 10%;
+      line-height: 1.5;
+    }
+
+    select {
+      padding: 6px 10px;
+      border-radius: 5px;
+      border: none;
+      background: #222;
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-selector">
+    <label for="language">Select Language:</label>
+    <select id="language" onchange="loadStory()">
+      <option value="en">English</option>
+      <option value="te">Telugu</option>
+      <option value="hi">Hindi</option>
+    </select>
+  </div>
+
+  <div class="story-container">
+    <h1 class="story-title" id="story-title">Krishna’s Headache</h1>
+    <img
+      id="story-image"
+      class="story-image"
+      src="https://cdn2.momjunction.com/wp-content/uploads/2014/05/Krishnas-headache.jpg.avif"
+      alt="Krishna’s Headache"
+    />
+    <div class="story-content" id="story-content">
+      <!-- Content loads here -->
+    </div>
+  </div>
+
+  <script>
+    const stories = {
+      en: {
+        title: "Krishna’s Headache",
+        content: `One day, Lord Krishna decides to test the love of his devotees. He pretends to have a headache and tells sage Narada that he could recover only if any of his true devotees collected the dust from their feet and smeared it on his forehead. The startled Narada goes to Krishna’s wives for help.
+All his wives disagree to do that as Krishna is their husband and putting their feet’s dust on his forehead would mean being disrespectful to Lord Krishna. Narada, then, goes to gopis and explains the situation.
+The gopis are overwhelmed with sorrow. They quickly collect dust and give it to Narada. He realizes that their devotion is so blind that they didn’t think about the repercussions that might happen.`
+      },
+      te: {
+        title: "కృష్ణుడి తలనొప్పి",
+        content: `ఒకరోజు భక్తుల ప్రేమను పరీక్షించాలనుకొని కృష్ణుడు తలనొప్పిగా నటించాడు. తన భక్తులెవరైనా తమ కాలdust తీసుకొని తన నెత్తిపై పెట్టితేనే తన తలనొప్పి తగ్గుతుందని నారదుని చెబుతాడు.
+నారదుడు కృష్ణుని భార్యల దగ్గరకు వెళ్తాడు కానీ వారు తమ భర్తపై కాలdust పెట్టడం అపచారమని నిరాకరిస్తారు. నారదుడు తరువాత గోపికల వద్దకు వెళ్తాడు.
+గోపికలు విచారంతో బాధపడతారు. వారు వెంటనే తమ కాలdust తీసుకొని నారదునికి ఇస్తారు. నారదుడు వారి భక్తి ఎంత అంధమైనదో తెలుసుకుంటాడు – వారు ఫలితాల గురించి కూడా ఆలోచించలేదు.`
+      },
+      hi: {
+        title: "कृष्ण का सिरदर्द",
+        content: `एक दिन भगवान कृष्ण अपने भक्तों की भक्ति की परीक्षा लेना चाहते हैं। वे सिरदर्द का बहाना बनाते हैं और नारद मुनि से कहते हैं कि उनका सिरदर्द तभी ठीक होगा जब कोई सच्चा भक्त अपने पैरों की धूल लाकर उनके माथे पर लगाए।
+नारद पहले कृष्ण की पत्नियों के पास जाते हैं लेकिन वे मना कर देती हैं, क्योंकि यह उनके लिए अपमानजनक होगा। फिर नारद गोपियों के पास जाते हैं।
+गोपियाँ दुःखी होकर बिना सोचे-समझे अपने पैरों की धूल देती हैं। नारद को उनकी निस्वार्थ भक्ति का ज्ञान होता है – उन्हें इसके परिणाम की परवाह नहीं थी।`
+      }
+    };
+
+    function loadStory() {
+      const lang = document.getElementById('language').value;
+      const story = stories[lang];
+      document.getElementById('story-title').innerText = story.title;
+      document.getElementById('story-content').innerHTML = story.content.replace(/\n/g, "<br><br>");
+    }
+
+    window.onload = loadStory;
+  </script>
+
+</body>
+</html>
